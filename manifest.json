@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "TikTok Shop - Lấy thông tin sản phẩm",
+  "description": "Trích xuất thông tin sản phẩm TikTok Shop và gửi qua Telegram Bot",
+  "version": "1.0.0",
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "permissions": ["storage", "activeTab"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon48.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://shop.tiktok.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
